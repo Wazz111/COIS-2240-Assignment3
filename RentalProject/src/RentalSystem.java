@@ -3,6 +3,17 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class RentalSystem {
+	private static RentalSystem instance;
+	private RentalSystem() {
+	        // loadData() will be added in Subtask 3
+	    }
+	public static RentalSystem getInstance() {
+        if (instance == null) {
+            instance = new RentalSystem();
+        }
+        return instance;
+    }
+
     private List<Vehicle> vehicles = new ArrayList<>();
     private List<Customer> customers = new ArrayList<>();
     private RentalHistory rentalHistory = new RentalHistory();
